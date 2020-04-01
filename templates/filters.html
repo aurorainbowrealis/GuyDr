@@ -1,0 +1,35 @@
+{% for i in info%}
+	{% if info[i]['type'] == 'min_max' %}
+		<div class="row custom-control custom-checkbox my-2">
+			<input type="checkbox" name="cb_{{i}}" class="custom-control-input" id="cb_{{i}}">
+			<label class="custom-control-label" for="cb_{{i}}">{{i}}</label>
+			<div class="row" id="min-max-{{i}}">
+				<div class="col-6">
+					Min {{i}}: <input class="form-control" id="min{{i}}" type="number" name="min{{i}}" min="{{info[i]['min']}}" max="{{info[i]['max']}}" step="1" value="{{info[i]['min']}}">
+				</div>
+				<div class="col-6">
+					Max {{i}}: <input class="form-control" id="max{{i}}" type="number" name="max{{i}}" min="{{info[i]['min']}}" max="{{info[i]['max']}}" step="1" value="{{info[i]['max']}}">
+				</div>
+			</div>
+		</div>
+	{% elif info[i]['type'] == 'select_multiple' %}
+		<div class="row my-2">
+			<label class="col-4 p-0" for="ms_{{i}}">{{i}}</label>
+			
+			<input type='text' placeholder='Select a {{i}}' class='flexdatalist col-8' data-min-length='0' multiple='multiple' list='ms_{{i}}' name='dl_{{i}}' data-selection-required='1' data-visible-properties='["name"]' data-value-property='value'>
+			<datalist name="ms_{{i}}" id="ms_{{i}}">
+				{% for j in range(info[i]['fields'] | length) %}
+					<option value="{{j}}">{{info[i]['fields'][j]}}</option>
+				{% endfor %}
+			</datalist>
+		</div>
+
+	{% elif info[i]['type'] == 'checkbox' %}
+		<div class="row custom-control custom-checkbox my-2">
+			<input type="checkbox" name="cb_{{i}}" class="custom-control-input" id="cb_{{i}}">
+			<label class="custom-control-label" for="cb_{{i}}">{{i}}</label>
+		</div>
+	{% endif %}
+{% endfor %}
+
+<button id="apply_filters" class="btn btn-secondary" onclick="applyFilters()">Apply Filters</button>

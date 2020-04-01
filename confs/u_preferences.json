@@ -1,0 +1,22 @@
+{
+	"online":"false",
+	"previouslyOnline":"false",
+	"ageMinimum":"18",
+	"ageMaximum":"99",
+	"heightMinimum":"121.5",
+	"heightMaximum":"241.5",
+	"weightMinimum":"40500.0",
+	"weightMaximum":"272500.0",
+	"grindrTribesIds":"",
+	"lookingForIds":"",
+	"relationshipStatusIds":"",
+	"bodyTypeIds":"",
+	"sexualPositionIds":"",
+	"ethnicityIds":"",
+	"meetAtIds":"",
+	"nsfwIds":"",
+	"photoOnly":"false",
+	"faceOnly":"false",
+	"favorite":"false",
+	"notRecentlyChatted":"false"
+}

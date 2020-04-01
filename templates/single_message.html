@@ -1,0 +1,27 @@
+{% if message.recv == True %}
+<div class="row w-100">
+  <div class="received_msg">
+    {% if message.type == 'text' %}
+    <div class="col-12">
+      <p class="rounded">{{message.body}}</p>
+    </div>
+    {% elif message.type == 'image'%}
+    <div class="col-12"><img class="rounded" src="http://cdns.grindr.com/grindr/chat/{{message.body | image_message}}"></div>
+    {% endif %}
+    <div class="col-12"><span class="time_date">{{message.timestamp | to_date}}</span></div>
+  </div>
+</div>
+{% else %}
+<div class="row w-100">
+  <div class="sent_msg">
+    {% if message.type == 'text' %}
+    <div class="col-12 d-flex p-0">
+      <p class="rounded m-0 ml-auto">{{message.body}}</p>
+    </div>
+    {% elif message.type == 'image'%}
+    <div class="col-12 d-flex p-0"><img class="rounded ml-auto" src="http://cdns.grindr.com/grindr/chat/{{message.body | image_message}}"></div>
+    {% endif %}
+    <div class="col-12 d-flex p-0"><span class="time_date ml-auto"> {{message.timestamp | to_date}}</span></div>
+  </div>
+</div>
+{% endif %}

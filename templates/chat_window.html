@@ -1,0 +1,50 @@
+<div class="msg_history">
+  {% for i in msgs %}
+  {% if i.recv == True %}
+  <div class="row w-100">
+    <div class="received_msg">
+      {% if i.type == 'text' %}
+      <div class="col-12">
+        <p class="rounded">{{i.body}}</p>
+      </div>
+      <div class="col-12">
+        <span class="time_date">{{i.timestamp | to_date}}</span>
+      </div>
+      {% elif i.type == 'image'%}
+      <div class="col-12">
+        <img src="http://cdns.grindr.com/grindr/chat/{{i.body | image_message}}">
+      </div>
+      <div class="col-12">
+        <span class="time_date">{{i.timestamp | to_date}}</span>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% else %}
+  <div class="sent_msg ">
+    {% if i.type == 'text' %}
+      <div class="col-12 d-flex p-0">
+        <p class="rounded recv">{{i.body}}</p>
+      </div>
+      <div class="col-12"><span class="time_date recv">{{i.timestamp | to_date}}</span></div>
+    {% elif i.type == 'image'%}
+    <div class="col-12 d-flex p-0"><img class="recv"src="http://cdns.grindr.com/grindr/chat/{{i.body | image_message}}"></div>
+    <div class="col-12 d-flex p-0"><span class="time_date recv"> {{i.timestamp | to_date}}</span></div>
+    {% endif %}
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+<div class="type_msg">
+  <div class="row input_msg_write">
+    <div class="col-10">
+      <input type="text" class="write_msg" placeholder="Type a message">
+    </div>
+    <div class="col-2">
+      <div class="msg_send_btn avatar-title rounded-circle bg-primary-dark align-middle" type="button" onclick="sendChat()">
+        <i class="material-icons">send</i>
+      </div>
+    </div>
+    <!-- <button class="msg_send_btn" type="button" onclick="sendChat()" id='send_msg'><i class="material-icons">face</i></ion-icon></button> -->
+  </div>
+</div>

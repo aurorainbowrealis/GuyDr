@@ -1,0 +1,153 @@
+<div class="row">
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+    	{% for i in range(info.medias | length) %}
+	    {% if i == 0 %}
+      <li data-target="#myCarousel" data-slide-to="{{i}}" class="active"></li>
+      {% else %}
+      <li data-target="#myCarousel" data-slide-to="{{i}}"></li>
+      {% endif %}    
+      {% endfor %}
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+    	{% for i in range(info.medias | length) %}
+	    {% if i == 0 %}
+      <div class="carousel-item active"style="height: 500px">
+        <img class="d-block w-100"  src="http://cdns.grindr.com/images/profile/1024x1024/{{info.medias[i].mediaHash}}" alt="Image {{i}}">
+      </div>
+      {% else %}
+
+      <div class="carousel-item"style="height: 500px">
+        <img class="d-block w-100"  src="http://cdns.grindr.com/images/profile/1024x1024/{{info.medias[i].mediaHash}}" alt="Image {{i}}">
+      </div>
+      {% endif %}
+	    {% endfor %} 
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control-prev" href="#myCarousel" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control-next" href="#myCarousel" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<div class="row">
+	<div class="col-10">
+		<h3 class="col-12">{{info.displayName}}{% if info.age != None %} - {{info.age}}{% endif %}</h3>
+		<h7>Online {{info.seen | elapsed_time}} ago</h7>
+		<br>
+		<h7>{{info.distance | distance_filter}} away</h7>
+	</div>
+	<div class="col-2">
+		<div class="msg_send_btn avatar-title rounded-circle bg-primary-dark align-middle" type="button" onclick="getChats({{info.profileId}})">
+			<span class="material-icons">chat_bubble_outline</span>
+		</div>
+		
+	</div>
+</div>
+
+
+{% if info.aboutMe != None %}
+<p>{{info.aboutMe}}</p>
+{% endif %}
+{% if 'height' in info and info.height != None %}
+<div class="row">
+  <div class="col-4 border">Height</div>
+  <div class="col-8 border">{{info.height | height_meters}} m</div>
+</div>
+{% endif %}
+{% if weight in info and info.weight != None %}
+<div class="row">
+  <div class="col-4 border">Weight</div>
+  <div class="col-8">{{info.weight | to_kilos}} kg</div>
+</div>
+{% endif %}
+{% if 'ethnicity' in info and info.ethnicity not in ['', None] %}
+<div class="row">
+  <div class="col-4 border">Ethnicity</div>
+  <div class="col-8 border">{{info.ethnicity | named_field('Ethnicity')}}</div>
+</div>
+{% endif %}
+{% if 'bodyType' in info and info.bodyType not in ['', None] %}
+<div class="row">
+  <div class="col-4 border">Body Type</div>
+  <div class="col-8 border">{{info.bodyType | named_field('Body Type')}}</div>
+</div>
+{% endif %}
+{% if 'identity' in info and info.identity != None %}
+{% if 'gender' in info.identity and info.identity.gender.genderDisplay != None %}
+<div class="row">
+  <div class="col-4 border">Gender</div>
+  <div class="col-8 border">{{info.identity.gender.genderDisplay}}</div>
+</div>
+{% endif %}
+{% if 'pronouns' in info.identity and info.identity.pronouns.pronounsDisplay != None %}
+<div class="row">
+  <div class="col-4 border">Pronouns</div>
+  <div class="col-8 border">{{info.identity.pronouns.pronounsDisplay}}</div>
+</div>
+{% endif %}
+{% endif %}
+{% if 'sexualPosition' in info and info.sexualPosition not in ['', None] %}
+<div class="row">
+  <div class="col-4 border">Position</div>
+  <div class="col-8 border">{{info.sexualPosition | named_field('Position')}}</div>
+</div>
+{% endif %}
+{% if 'grindrTribes' in info and info.grindrTribes not in ['', None, '[]'] %}
+<div class="row">
+  <div class="col-4 border">Tribes</div>
+  <div class="col-8 border">{{info.grindrTribes | named_field('Tribes')}}</div>
+</div>
+{% endif %}
+{% if 'relationshipStatus' in info and info.relationshipStatus not in ['', None, '[]'] %}
+<div class="row">
+  <div class="col-4 border">Relationship Status</div>
+  <div class="col-8 border">{{info.relationshipStatus | named_field('Relationship Status')}}</div>
+</div>
+{% endif %}
+{% if 'lookingFor' in info and info.lookingFor not in ['', None, '[]'] %}
+<div class="row">
+  <div class="col-4 border">Looking For</div>
+  <div class="col-8 border">{{info.lookingFor | named_field('Looking For')}}</div>
+</div>
+{% endif %}
+{% if 'nsfw' in info and info.nsfw not in ['', None, '[]'] %}
+<div class="row">
+  <div class="col-4 border">Accepts NSFW Pics</div>
+  <div class="col-8 border">{{info.nsfw | named_field('Accept NSFW Pics')}}</div>
+</div>
+{% endif %}
+{% if 'meetAt' in info and info.meetAt not in ['', None, '[]'] %}
+<div class="row">
+  <div class="col-4 border">Meet At</div>
+  <div class="col-8 border">{{info.meetAt | named_field('Meet At')}}</div>
+</div>
+{% endif %}
+{% if 'hivStatus' in info and info.hivStatus not in ['', None, '[]'] %}
+<div class="row">
+  <div class="col-4 border">HIV Status</div>
+  <div class="col-8 border">{{info.hivStatus}}</div>
+</div>
+{% endif %}
+{% if 'lastTested' in info and info.lastTested not in ['', None, '[]'] %}
+<div class="row">
+  <div class="col-4 border">Last Tested</div>
+  <div class="col-8 border">{{info.lastTested}}</div>
+</div>
+{% endif %}
+{% if 'socialNetworks' in info and info.socialNetworks not in ['', None, '[]', '{}'] %}
+<div class="row">
+  <div class="col-4 border">Find me on</div>
+  <div class="col-8 border">{{info.socialNetworks}}</div>
+</div>
+{% endif %}

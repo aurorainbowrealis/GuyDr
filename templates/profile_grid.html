@@ -1,0 +1,43 @@
+{% for i in info.profiles %}
+<div class="col-4 m-0 p-0">
+  <a onclick="loadProfile('{{i.profileId}}')" href="#" class="thumbnail">
+    <div style="overflow: hidden; padding-bottom: 100%">
+      {% if i.profileImageMediaHash != None %}
+        <img class="rounded" src="http://cdns.grindr.com/images/thumb/320x320/{{i.profileImageMediaHash}}"
+        class="img-fluid full-width" style="width: 100%; position: absolute;" />
+      {% else %}
+        <img class="rounded" src="../static/img/user-profile.jpg" style="width: 100%; height: 100%; position: absolute;" alt="sunil">
+      {% endif %}
+    </div>
+    <div
+      class="card-img-overlay p-1 align-self-end my-stroke text-white">
+      <h5 class="card-title text-white m-0">
+        {% if i.isOnline == True %}
+          <span class="onlinedot"></span>
+        {% else %}
+          <span class="offlinedot"></span>
+        {% endif %}
+        {% if i.displayName %}
+          <div style="display: inline-block;">{{i.displayName | display_name}}</div>
+        {% endif %}
+        {% if i.age %}
+          <div class="" style="display: inline-block;"> - {{i.age | to_int}}</div>
+        {% endif %}
+
+        {% if i.isNew == True %}
+          <span class="isnewdot"></span>
+        {% endif %}
+
+        {% if i.isFavorite == True%}
+          <span class="favoritedot"></span>
+        {% endif %}
+      </h5>
+      {% if i.showDistance == True %}
+          <small class="text-white">{{i.distance | distance_filter}} away</small>
+        {% else %}
+          <small class="text-white"><u>{{i.distance | distance_filter}} away</u></small>
+        {%endif%}
+    </div>
+  </a>
+</div>
+{%endfor%}

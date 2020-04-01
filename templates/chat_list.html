@@ -1,0 +1,30 @@
+<div class="inbox_chat">
+  {% for i in chats %}
+  <div class="row m-0">
+    <div class="col-2 p-0">
+      <a href="#" class="thumbnail" onclick="loadProfile({{i.chatId}})">
+        <div class="chat_img">
+        {% if i.profile.profileImageMediaHash %}
+        <img class="rounded" src="http://cdns.grindr.com/images/thumb/320x320/{{i.profile.profileImageMediaHash}}" alt="sunil">
+        {% else %}
+        <img class="rounded" src="../static/img/user-profile.jpg" alt="sunil">
+        {% endif %}
+      </div></a>
+    </div>
+    <div class="col-10 p-0">
+      <a href="#" onclick="getChats({{i.chatId}})" class="thumbnail">
+        <div class="chat_list">
+          <div class="chat_ib">
+            <h7><b>{{i.profile.displayName}}</b></h7>
+            {% if i.type == 'text' %}
+            <p>{{i.body}}</p>
+            {% else %}
+            <p>{{i.type}}</p>
+            {% endif%}
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  {% endfor %}
+</div>

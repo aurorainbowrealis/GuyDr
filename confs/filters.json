@@ -1,0 +1,115 @@
+{
+	"Face Photos Only":{"type":"checkbox"},
+	"Online Only":{"type":"checkbox"},
+	"Photos Only":{"type":"checkbox"},
+	"Haven't Chatted Today":{"type":"checkbox"},
+	"Age":{"min":18, "max":99, "type":"min_max"},
+	"Height":{"min":122, "max":241, "type":"min_max"},
+	"Weight":{"min":41, "max":272, "type":"min_max"},
+	"Ethnicity":{
+		"fields":[
+			"No Response",
+			"Asian",
+			"Black",
+			"Latino",
+			"Middle Eastern",
+			"Mixed",
+			"Native American",
+			"White",
+			"Other",
+			"South Asian"
+		],
+		"type":"select_multiple"
+	},
+	"Body Type":{
+		"fields":[
+			"No Response",
+			"Toned",
+			"Average",
+			"Large",
+			"Muscular",
+			"Slim",
+			"Stocky"
+		],
+		"type":"select_multiple"
+	},
+	"Position":{
+		"fields":[
+			"No Response",
+			"Top",
+			"Bottom",
+			"Versatile",
+			"Vers Bottom",
+			"Vers Top"
+		],
+		"type": "select_multiple"
+	},
+	"Tribes":{
+		"fields":[
+			"No Response",
+			"Bear",
+			"Clean-Cut",
+			"Daddy",
+			"Discreet",
+			"Geek",
+			"Jock",
+			"Leather",
+			"Otter",
+			"Poz",
+			"Rugged",
+			"Trans",
+			"Twink",
+			"Sober"
+		],
+		"type": "select_multiple"
+	},
+	"Relationship Status":{
+		"fields":[
+			"No Response",
+			"Single",
+			"Dating",
+			"Exclusive",
+			"Invalid",
+			"Partnered",
+			"Engaged",
+			"Married",
+			"Open Relationship"
+		],
+		"type": "select_multiple"
+	},
+	"Looking For":{
+		"fields":[
+			"No Response",
+			"Invalid",
+			"Chat",
+			"Dates",
+			"Friends",
+			"Networking",
+			"Relationship",
+			"Right Now"
+		],
+		"type": "select_multiple"
+	},
+	"Meet At":{
+		"fields":[
+			"No Response",
+			"My Place",
+			"Your Place",
+			"Bar",
+			"Coffee Shop",
+			"Restaurant",
+			"Partnered",
+			"Single"
+		],
+		"type": "select_multiple"
+	},
+	"Accept NSFW Pics":{
+		"fields":[
+			"No Response",
+			"Never",
+			"Not At First",
+			"Yes Please"
+		],
+		"type": "select_multiple"
+	}
+}

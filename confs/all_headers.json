@@ -1,0 +1,13 @@
+{
+    "L-Time-Zone":"America/New_York",
+    "L-Grindr-Roles":"[Unlimited]",
+    "L-Device-Info":"SOME_DEVICE_INFO",
+    "Accept": "application/json",
+    "User-agent":"USER_AGENT_INFO",
+    "L-Locale":"en_US",
+    "Accept-language":"en-US",
+    "Content-Type": "application/json; charset=UTF-8",
+    "Host":"grindr.mobi",
+    "Connection":"Keep-Alive",
+    "Accept-Encoding": "gzip"
+}

@@ -1,0 +1,11 @@
+{
+    "Authorization":"AUTH_TOKEN",
+    "app":"com.grindrapp.android",
+    "gcm_ver":"20104005",
+    "User-Agent":"USER_AGENT_INFO",
+    "content-length":"516",
+    "content-type":"application/x-www-form-urlencoded",
+    "Host":"android.clients.google.com",
+    "Connection":"Keep-Alive",
+    "Accept-Encoding":"gzip"
+}

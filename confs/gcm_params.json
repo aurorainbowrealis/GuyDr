@@ -1,0 +1,21 @@
+{
+    "X-subtype":"SOMETHING",
+    "sender":"SOMETHING",
+    "X-app_ver":"SOME_STUFF",
+    "X-osv":"...",
+    "X-cliv":"...",
+    "X-gmsv":"...",
+    "X-appid":"...",
+    "X-scope":"*",
+    "X-gmp_app_id":"...",
+    "X-Firebase-Client":"FIREBASE_CLIENT",
+    "X-Firebase-Client-Log-Type":"3",
+    "X-app_ver_name":"...",
+    "app":"com.grindrapp.android",
+    "device":"3602455700959752843",
+    "app_ver":"...",
+    "gcm_ver":"20104005",
+    "plat":"0",
+    "cert":"CERTIFICATE",
+    "target_ver":"29"
+}

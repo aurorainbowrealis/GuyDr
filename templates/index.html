@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html data-useragent="Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101 Firefox/68.0" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes, user-scalable=no">
+    <meta name="author" content="Bootlab">
+    <title>Guydr</title>
+    <link href="https://spark.bootlab.io/css/modern.css" rel="stylesheet">
+    <link href="http://projects.sergiodinislopes.pt/flexdatalist/src/jquery.flexdatalist.css" rel="stylesheet" type="text/css">
+    <link href="../static/css/my_style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../static/img/user-profile.jpg">
+    <style>
+      body {
+      opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <audio id="myAudio" autoplay="false">
+  <source src="../static/misc/notify.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+    <div class="splash">
+      <div class="splash-icon"></div>
+    </div>
+    <div id='sidebar'>
+    </div>
+    <nav class="navbar navbar-expand navbar-theme">
+      <div class="d-sm-none"></div>
+    </nav>
+    <main class="content p-0">
+      <div class="container-fluid p-0">
+        <div class="header d-none d-lg-flex">
+          <h1 class="header-title">
+            Guydr Project
+          </h1>
+          <p class="header-subtitle">An alternative app client</p>
+        </div>
+        <div class="row w-100 m-0">
+          <div class="col-sm-12 col-md-6 col-xxl-4 d-flex p-0 on-mobile" id="nearby">
+            <div class="card flex-fill w-100">
+              <div class="card-header d-none d-xl-flex">
+                <h5 class="card-title mb-0">Nearby Profiles</h5>
+              </div>
+              <div class="card-body p-0">
+                <div id="profile-grid" class="w-100 d-flex flex-wrap p-0 grid-container mb-5"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-xxl-4 d-none on-mobile" id='single-profile-container'>
+            <div class="card flex-fill">
+              <div class="card-header d-none d-md-block">
+                <h5 class="card-title mb-0 ">User Profile</h5>
+              </div>
+              <div class="card-body p-0" id='single-profile'>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row w-100 m-0">
+          <div class="col col-xxl-6 p-0 m-0 on-mobile d-none" id="chats">
+            <div class="card flex-fill w-100">
+              <div class="card-header d-none d-md-block">
+                <h5 class="card-title mb-0 ">Chats</h5>
+              </div>
+              <div class="card-body p-0 m-0 mb-5">
+                <div class="inbox_msg">
+                  <div class="inbox_people">
+                    <!-- Chat Heads go here -->
+                  </div>
+                  <!-- <div class="mesgs"></div> -->
+                  <!-- Chat window go here -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-xxl-6 p-0 m-0 on-mobile d-none" id='chat-screen'>
+            <div class="card flex-fill w-100">
+              <div class="card-body p-1 m-0">
+                <div class="inbox_msg">
+                  <!-- <div class="inbox_people"></div> -->
+                  <div class="mesgs"></div>
+                  <!-- Chat window go here -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row d-sm-none p-0 tooltip_bottom">
+        <div class="btn-group btn-group-toggle w-100" data-toggle="buttons">
+          <label class="btn btn-secondary active" onclick="chooseScreen('#nearby')">
+          <input type="radio" name="options" id="option1" autocomplete="off" checked> Profiles
+          </label>
+          <label class="btn btn-secondary" onclick="chooseScreen('#chats')">
+          <input type="radio" name="options" id="option2" autocomplete="off"> Chats
+          </label>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-flexdatalist/2.2.4/jquery.flexdatalist.min.js"></script>
+    <script src="../static/js/alljs.js"></script>
+  </body>
+</html>
